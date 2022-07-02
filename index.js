@@ -186,11 +186,9 @@ function generate_messages(text) {
 }
 
 function userInMentions(user, message) {
-	let matchingUser = message.mentions.users.find(
+	return message.mentions.users.some(
 		u => u === user
 	);
-
-	return matchingUser !== undefined;
 }
 
 client.on('messageCreate', (message) => {
